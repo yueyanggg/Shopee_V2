@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --color-primary: #EE4D2D;
+    --color-primary-hover: #D73211;
+    --color-secondary: #FF5722;
+    --color-mall: #D0011B;
+    --color-discount-bg: #FFE97A;
+    --color-star: #FFCE3D;
+    --color-canvas: #F5F5F5;
+    --color-border: #EBEBEB;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #F5F5F5;
+    color: #222222;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Product card hover lift per design spec */
+.shopee-card {
+  border-radius: 2px;
+  border: 1px solid #EBEBEB;
+  background-color: #FFFFFF;
+  transition: transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.shopee-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+  border-color: #EE4D2D;
+}
+
+/* Folded ribbon chevron notch on discount badge */
+.discount-ribbon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 18px 4px 18px;
+  border-color: transparent #FFE97A transparent #FFE97A;
+}
+
+/* Voucher cutout ticket radial punch-outs */
+.voucher-ticket {
+  position: relative;
+  background: #FFFFFF;
+}
+
+.voucher-ticket::before,
+.voucher-ticket::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background: #F5F5F5;
+  border-radius: 9999px;
+  transform: translateY(-50%);
+  border: 1px solid #E8D5D0;
+  z-index: 2;
+}
+
+.voucher-ticket::before {
+  left: -6px;
+}
+
+.voucher-ticket::after {
+  right: -6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shopee-card {
+    transition: none;
+  }
+}

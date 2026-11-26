@@ -1,0 +1,6 @@
+{
+  "name": "Shopee Marketplace Desktop",
+  "description": "High-density desktop e-commerce marketplace featuring Flash Sales, Shopee Mall, category filtering, product detail pages, voucher claims, and cart checkout.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
